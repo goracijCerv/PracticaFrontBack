@@ -7,4 +7,4 @@ export class Book{
 }
 
 //Direcion de api 
-//https://localhost:7065
+//https://localhost:7065/api/

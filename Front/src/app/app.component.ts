@@ -17,6 +17,6 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.books = this.bookService.getBooks();
+    this.bookService.getBooks().subscribe((result: Book[]) => (this.books = result));
   }
 }
