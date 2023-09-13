@@ -1,0 +1,22 @@
+<div *ngIf="book">
+    <h2>Libro: {{book.title}}</h2>
+    <div>
+        Titutlo:
+        <input [(ngModel)]="book.title" placeholder="Titulo del lirbo">
+    </div>
+    <div>
+        Autor:
+        <input [(ngModel)]="book.author"  placeholder="Autor del libro">
+    </div>
+    <div>
+        Fecha de publicacion:
+        <input [(ngModel)]="book.datePublication" type="datetime">
+    </div>
+    <div>
+        Numero de ventas:
+        <input [(ngModel)]="book.sales" type="number"> 
+    </div>
+    <button (click)="updateBook(book)" *ngIf="book.id" >Actualizar</button>
+    <button (click)="delateBook(book)" *ngIf="book.id" >Borrar</button>
+    <button (click)="createBook(book)" *ngIf="!book.id" >Crear</button>
+</div>

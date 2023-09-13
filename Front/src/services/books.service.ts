@@ -12,7 +12,24 @@ export class BooksService {
   private url = 'Book';
   constructor(private http: HttpClient ) { }
 
-  public getBooks() : Observable<Book[]>{
+  public getBooks():Observable<Book[]>{
     return this.http.get<Book[]>(`${environment.baseUrl}/${this.url}`);
   }
+
+  public getBook(book: Book):Observable<Book>{
+    return this.http.get<Book>(`${environment.baseUrl}/${this.url}/${book.id}`);
+  }
+  
+  public addBook(book: Book):Observable<Book[]>{
+    return this.http.post<Book[]>(`${environment.baseUrl}/${this.url}/add-book`,book);
+  }
+
+  public updateBook(book: Book):Observable<Book[]>{
+    return this.http.put<Book[]>(`${environment.baseUrl}/${this.url}`,book);
+  }
+
+  public delateBook(book: Book):Observable<Book[]>{
+    return this.http.delete<Book[]>(`${environment.baseUrl}/${this.url}/d/${book.id}`)
+  }
+
 }

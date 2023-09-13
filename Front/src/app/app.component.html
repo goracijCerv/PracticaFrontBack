@@ -1,9 +1,11 @@
+<button (click)="InitialNewBook()">Crea una nueva instancia de libro</button>
 <table>
   <thead>
     <th>Titulo</th>
     <th>Autor</th>
     <th>Fecha de Publicacion</th>
     <th>Unidades Vendidas</th>
+    <th>Editar</th>
   </thead>
   <tbody>
     <tr *ngFor="let book of books">
@@ -11,6 +13,8 @@
       <td>{{book.author}}</td>
       <td>{{book.datePublication}}</td>
       <td>{{book.sales}}</td>
+      <td><button (click)="editBook(book)">Editar</button></td>
     </tr>
   </tbody>
 </table>
+<app-edit-book [book]="bookToEdit" (bookUpdate)="updateBookList($event)"></app-edit-book>
