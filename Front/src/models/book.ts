@@ -5,3 +5,6 @@ export class Book{
     datePublication?: Date;
     sales?: number; 
 }
+
+//Direcion de api 
+//https://localhost:7065
